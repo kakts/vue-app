@@ -20,11 +20,6 @@ let app3 = new Vue({
   }
 });
 
-setInterval(() => {
-  app3.seen = !app3.seen
-}, 1000);
-
-
 let app4 = new Vue({
   el: '#app-4',
   data: {
@@ -40,12 +35,7 @@ let app4 = new Vue({
       }
     ]
   }
-})
-setInterval(() => {
-  app4.todos.push({
-    text: Date.now()
-  })
-}, 3000)
+});
 
 const app5 = new Vue({
   el: '#app-5',
@@ -57,4 +47,11 @@ const app5 = new Vue({
       this.message = this.message.split('').reverse().join('');
     }
   }
-})
+});
+
+const app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue'
+  }
+});
