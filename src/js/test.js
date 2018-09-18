@@ -69,6 +69,11 @@ const app7 = new Vue({
       { id: 0, text: 'Vegetables'},
       { id: 1, text: 'Cheese'},
       { id: 2, text: 'Whatever else humans are supposed to eat'}
-    ]
+    ],
+    b: null
   }
 });
+// 初期化時にdataに指定されたパラメータの変更はリアクティブ
+app7.b = 'hi';
+// new Vueで渡したデータのみリアクティブになるので、下記はビューの更新を引き起こさない
+app7.d = 'hihi';
