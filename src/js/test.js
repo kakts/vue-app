@@ -62,6 +62,11 @@ Vue.component('todo-item', {
   template: '<li>{{ todo.text }}</li>'
 });
 
+Vue.component('wei', {
+  props: ['todo2'],
+  template: 'we! {{ todo2.we }}'
+});
+
 const app7 = new Vue({
   el: '#app-7',
   data: {
@@ -70,10 +75,37 @@ const app7 = new Vue({
       { id: 1, text: 'Cheese'},
       { id: 2, text: 'Whatever else humans are supposed to eat'}
     ],
-    b: null
+    b: null,
+    iii: [
+      {id : 0, we: 111},
+      {id : 1, we: 222}
+    ]
+  },
+  created: function() {
+    console.log('created-----', this.b);
+  },
+  mounted: function() {
+    console.log('mounted---');
+  },
+  updated: function() {
+    console.log('updated---');
+  },
+  destroyed: function() {
+    console.log('destroyed---');
   }
 });
 // 初期化時にdataに指定されたパラメータの変更はリアクティブ
 app7.b = 'hi';
 // new Vueで渡したデータのみリアクティブになるので、下記はビューの更新を引き起こさない
 app7.d = 'hihi';
+
+const app8 = new Vue({
+  el: '#app-8',
+  data: {
+    msg: 'hellowwww',
+    seen: true
+  }
+})
+setInterval(function() {
+  app8.seen = !app8.seen
+}, 1000)

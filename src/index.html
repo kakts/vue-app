@@ -43,9 +43,20 @@
 <div id="app-7">
   <ol>
     <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+  
+
     </ol>
   {{b}} <br>
   {{d}}
+  <wei v-for="item2 in iii" v-bind:todo2='item2'></wei>
+</div>
+
+<div id='app-8'>
+  <!-- same -->
+  <span v-text='msg'></span>-----
+  <span>{{msg}}</span>
+  <div v-if="seen">seen: {{seen}}</div>
+  <div v-else> mienai </div>
 </div>
 
 
