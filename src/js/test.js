@@ -114,10 +114,43 @@ const app8 = new Vue({
   },
   methods: {
     test2: function() {
+      // 再描画が起きるたびに関数を実行する 結果が毎回変わる コストがかかるので注意
       return Date.now() + '$';
     }
   }
 })
-setInterval(function() {
-  app8.seen = !app8.seen
-}, 1000)
+
+const watchExampleVM = new Vue({
+  el: '#watch-example',
+  data: {
+    question: '',
+    answer: 'I cannot give you an answer until you ask a question!'
+  },
+  watch: {
+    question: function(newQ, oldQ) {
+      this.answer = 'Waiting for you to stop typing';
+      this.debouncedGetAnswer();
+    }
+  },
+  created: function() {
+    this.debouncedGetAnswer = _.debounce(this.getAnswer, 500);
+  },
+  methods: {
+    getAnswer: function() {
+      if (this.question.indexOf('?') === -1) {
+        this.answer = 'Questions usually contain a question mark. ;-)'
+        return;
+      }
+
+      this.answer = 'Thinking...'
+      var vm = this;
+      axios.get('https://yesno.wtf/api')
+        .then(function(response) {
+          vm.answer = _.capitalize(response.data.answer)
+        })
+        .catch(function(err) {
+          vm.answer = 'Error! Could not reach the API. ' + error
+        })
+    }
+  }
+})
