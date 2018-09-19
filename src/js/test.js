@@ -104,6 +104,18 @@ const app8 = new Vue({
   data: {
     msg: 'hellowwww',
     seen: true
+  },
+  computed: {
+    test: function() {
+      // computedプロパティは依存関係に基づきキャッシュされる
+      // 依存するものが更新されたときにだけ再評価される
+      return Date.now() + '$'
+    }
+  },
+  methods: {
+    test2: function() {
+      return Date.now() + '$';
+    }
   }
 })
 setInterval(function() {
