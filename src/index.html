@@ -68,10 +68,10 @@
     <input v-model="question">
   </p>
   <p>{{ answer }}</p>
-
+  <h1 v-show="ok">Hello!</h1>
 </div>
 
-<div id="class-test" class="static" v-bind:class="{active: isActive, 'text-danger': hasError }">
+<div id="class-test" class="static" v-bind:class="classObj" v-bind:style="style">
 test</div>
 
 

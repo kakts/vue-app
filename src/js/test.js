@@ -158,7 +158,14 @@ const watchExampleVM = new Vue({
 const classTest = new Vue({
   el: '#class-test',
   data: {
-    isActive: true,
-    hasError: false
+    classObj: {
+      isActive: true,
+      hasError: false
+    },
+    style: {
+      color: 'red',
+      fontSize: 100
+    }
+
   }
 });
