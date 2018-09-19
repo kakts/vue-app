@@ -154,3 +154,11 @@ const watchExampleVM = new Vue({
     }
   }
 })
+
+const classTest = new Vue({
+  el: '#class-test',
+  data: {
+    isActive: true,
+    hasError: false
+  }
+});
