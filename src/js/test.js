@@ -169,3 +169,28 @@ const classTest = new Vue({
 
   }
 });
+
+const forTest = new Vue({
+  el: '#for-test',
+  data: {
+    items: [
+      {
+        name: 'test1',
+        message: 'hello1'
+      },
+      {
+        name: 'test2',
+        message: 'hello2'
+      },
+      {
+        name: 'test3',
+        message: 'hello3'
+      },
+    ],
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
+  }
+})

@@ -74,6 +74,20 @@
 <div id="class-test" class="static" v-bind:class="classObj" v-bind:style="style">
 test</div>
 
+<div id='for-test'>
+  <ul>
+    <li v-for="(item, index) in items">
+      {{index}}! name: {{item.name}}, message: {{ item.message }}
+    </li>
+  </ul>
+
+  <ul>
+    <li v-for="(value, key) in object">
+      key: {{key}} , value: {{value}}
+    </li>
+  </ul>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
