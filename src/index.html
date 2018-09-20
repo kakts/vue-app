@@ -88,6 +88,12 @@ test</div>
   </ul>
 </div>
 
+<div id="example-1">
+  <button v-on:click="counter += 1">Add 1</button>
+  <button v-on:click="addTwo">Add 2</button>
+  <input v-on:keyup.enter="addTwo">test</input>
+  <p> The count is : {{ counter}}</p>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>

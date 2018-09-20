@@ -193,4 +193,16 @@ const forTest = new Vue({
       age: 30
     }
   }
-})
+});
+
+const onTest = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  },
+  methods: {
+    addTwo: function() {
+      this.counter += 2
+    }
+  }
+});
