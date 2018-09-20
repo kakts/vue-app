@@ -206,3 +206,13 @@ const onTest = new Vue({
     }
   }
 });
+
+const modelTest = new Vue({
+  el: '#model-example',
+  data: {
+    message: 'default',
+    message2: 'lazy',
+    message3: 100,
+    checked: true
+  }
+});

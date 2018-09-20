@@ -95,6 +95,21 @@ test</div>
   <p> The count is : {{ counter}}</p>
 </div>
 
+<div id="model-example">
+
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+    <input v-model="message" placeholder="edit me">
+    <p> Message is: {{message}}</p>
+
+    <input v-model.lazy="message2" placeholder="edit me">
+    <p> Message is: {{message2}}</p>
+
+    <input v-model.lazy.number="message3" placeholder="edit me">
+    <p> Message is: {{message3}}</p>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
