@@ -15,4 +15,10 @@ Vue.component('blog-post', {
   template: '<h3>{{ title }}</h3>'
 });
 
+Vue.component('slot-test', {
+  template: '<a v-bind:href="url" class="nav-link">' +
+    '  <slot></slot> ' +
+    '</a>'
+});
+
 new Vue({el: '#components-demo'});
