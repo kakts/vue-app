@@ -71,3 +71,13 @@ new Vue({
   },
   mixins: [myMixin]
 });
+
+Vue.directive('focus', {
+  inserted: function(el) {
+    el.focus()
+  }
+});
+
+new Vue({
+  el: '#example-dir'
+})
