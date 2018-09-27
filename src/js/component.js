@@ -17,8 +17,57 @@ Vue.component('blog-post', {
 
 Vue.component('slot-test', {
   template: '<a v-bind:href="url" class="nav-link">' +
-    '  <slot></slot> ' +
+    '  <slot></slot> 1<br>' +
+    ' <slot></slot> 2 <br>' +
     '</a>'
 });
 
 new Vue({el: '#components-demo'});
+
+new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  },
+  methods: {
+    fix: function() {
+      this.show = !this.show;
+    }
+  }
+});
+
+new Vue({
+  el: '#example-1',
+  data: {
+    show: true
+  },
+  methods: {
+    fix: function() {
+      this.show = !this.show;
+    }
+  }
+});
+
+new Vue({
+  el: '#example-2',
+  data: {
+    show: true
+  },
+  methods: {
+    fix: function() {
+      this.show = !this.show;
+    }
+  }
+});
+
+new Vue({
+  el: '#example-3',
+  data: {
+    show: true
+  },
+  methods: {
+    fix: function() {
+      this.show = !this.show;
+    }
+  }
+});
