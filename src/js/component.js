@@ -48,16 +48,20 @@ new Vue({
   }
 });
 
-new Vue({
-  el: '#example-2',
-  data: {
-    show: true
-  },
+var myMixin = {
   methods: {
     fix: function() {
       this.show = !this.show;
     }
   }
+}
+
+new Vue({
+  el: '#example-2',
+  data: {
+    show: true
+  },
+  mixins: [myMixin]
 });
 
 new Vue({
@@ -65,9 +69,5 @@ new Vue({
   data: {
     show: true
   },
-  methods: {
-    fix: function() {
-      this.show = !this.show;
-    }
-  }
+  mixins: [myMixin]
 });
